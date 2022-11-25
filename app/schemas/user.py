@@ -14,9 +14,5 @@ class UserSchema(BaseModel):
 class CreateUserSchema(UserSchema):
     password: constr(min_length=6)
     verified: bool = False
-    
-class LoginUserSchema(BaseModel):
-    email: EmailStr
-    password: constr(min_length=6)
 
     

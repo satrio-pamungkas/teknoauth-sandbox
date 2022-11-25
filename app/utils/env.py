@@ -9,7 +9,7 @@ class EnvSettings(BaseSettings):
     DB_HOSTNAME: str
     
     class Config:
-        env_file = './.env'
+        env_file = '../../.env'
         
 
 env = EnvSettings()
