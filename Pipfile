@@ -9,6 +9,9 @@ uvicorn = {extras = ["standard"], version = "*"}
 alembic = "*"
 sqlalchemy = "*"
 sqlmodel = "*"
+psycopg2-binary = "*"
+python-dotenv = "*"
+pydantic = {extras = ["email"], version = "*"}
 
 [dev-packages]
 
