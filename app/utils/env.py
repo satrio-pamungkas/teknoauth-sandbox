@@ -7,6 +7,8 @@ class EnvSettings(BaseSettings):
     DB_NAME: str
     DB_HOST: str
     DB_HOSTNAME: str
+    SECRET_KEY: str 
+    ALGORITHM: str
     
     class Config:
         env_file = '../../.env'
