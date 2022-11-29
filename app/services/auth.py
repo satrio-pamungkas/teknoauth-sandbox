@@ -8,12 +8,13 @@ ALGORITHM = env.ALGORITHM
 
 def generate_access_token(data: dict, expires_delta: Union[timedelta, None] = None):
     to_encode = data.copy()
-    print(expires_delta)
     if expires_delta:
-        expire = datetime.now() + timedelta(expires_delta)
+        expire = datetime.now() + timedelta(minutes=expires_delta)
     else:
         expire = datetime.now() + timedelta(minutes=10)
-    to_encode.update({"exp": expire})
+        
+    to_encode.update({"exp": expire.timestamp()})
+    print(to_encode)
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     
     return encoded_jwt
