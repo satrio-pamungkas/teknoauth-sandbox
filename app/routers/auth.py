@@ -19,6 +19,6 @@ def login(request: schema.LoginUserSchema,  db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Password not match')
     
     return schema.LoginResponseSchema(
-        access_token=auth.generate_access_token(data={"sub": user.username}, expires_delta=1),
+        access_token=auth.generate_access_token(data={"identity": user.username}, expires_delta=1),
         expires_in=1
     )
