@@ -15,6 +15,7 @@ pydantic = {extras = ["email"], version = "*"}
 passlib = {extras = ["argon2"], version = "*"}
 httpx = "*"
 python-jose = {extras = ["cryptography"], version = "*"}
+pytest = "*"
 
 [dev-packages]
 
